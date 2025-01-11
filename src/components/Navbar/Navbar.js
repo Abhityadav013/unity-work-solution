@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { FaBars, FaRegUser, FaTimes } from "react-icons/fa";
 import { Button } from "antd";
+
 const NavBar = () => {
   const [menu, setMenu] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,8 @@ const NavBar = () => {
     setSidebarVisible(!sidebarVisible);
     setIsMenuOpen(!isMenuOpen);
   };
+
+  console.log('sidebarVisible>>>>',sidebarVisible)
   return (
     <div className="navbar">
       <img src={`${process.env.PUBLIC_URL}/logo.jpg`} className="logo" alt="" />
@@ -40,9 +43,14 @@ const NavBar = () => {
           Blog
         </li>
       </ul>
+
+      {/* Overlay to blur the background when the menu is open */}
+      <div className={`navbar-overlay ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu} />
+
       <div className="navbar-right">
         <Button icon={<FaRegUser />} />
       </div>
+
       <div className="hamburger" onClick={toggleMenu}>
         {sidebarVisible ? <FaTimes /> : <FaBars />}
       </div>
