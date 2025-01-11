@@ -70,7 +70,7 @@
 /* Active State for Menu */
 .navbar-menu.active {
   display: flex; /* Show menu on mobile when active */
-  height: 250%;
+  height: 220%;
   flex-direction: column;
   position: absolute;
   top: 60px; /* Position below the navbar */
@@ -108,6 +108,19 @@
 
 .navbar button .anticon {
   font-size: 28px; /* Make the icon size bigger to match menu items */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  width: 100%;
+  margin-top: 20px; /* Adds space between the menu and social links */
+}
+
+.social-links a {
+  color: #49557e;
+  text-decoration: none;
 }
 
 /* Mobile View - Show Hamburger */
