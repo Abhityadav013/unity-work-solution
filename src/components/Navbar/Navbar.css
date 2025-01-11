@@ -1,0 +1,129 @@
+/* Navbar Container */
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 100; /* Ensure navbar stays above all other elements */
+  }
+  
+  /* Logo */
+  .navbar .logo {
+    width: 150px;
+  }
+  
+  /* Main Menu */
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+    font-family: Outfit;
+  }
+  
+  /* Navbar Right */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 45px; /* Adds space from the right side */
+  }
+  
+  /* Button Styling */
+  .navbar button {
+    background: transparent;
+    font-size: 28px; /* Match this with the font size of the menu items */
+    color: #49557e;
+    border: none;
+    padding: 10px 20px; /* Adjust padding to ensure icon fits properly */
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar button:hover {
+    background-color: #fff4f2;
+  }
+  
+  /* Hamburger Icon Styling */
+  .navbar .hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 200; /* Ensure it's clickable above other elements */
+  }
+  
+  .navbar .hamburger svg {
+    width: 30px;
+    height: 30px;
+    color: #49557e;
+  }
+  
+  /* Active State for Menu */
+  .navbar-menu.active {
+    display: flex; /* Show menu on mobile when active */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 0;
+    gap: 20px;
+  }
+  
+  /* Menu Items Styling */
+  .navbar-menu li {
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .navbar button .anticon {
+    font-size: 28px; /* Make the icon size bigger to match menu items */
+  }
+  
+  /* Mobile View - Show Hamburger */
+  @media screen and (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Hide menu items on mobile by default */
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .navbar .hamburger {
+      display: flex; /* Show hamburger on mobile */
+    }
+  
+    .navbar .navbar-right {
+      display: none; /* Hide right-side buttons in mobile view */
+    }
+  }
+  
+  /* Responsive Styling for Navbar (Smaller screens) */
+  @media screen and (max-width: 480px) {
+    .navbar .logo img {
+      width: 120px; /* Smaller logo for smaller screens */
+    }
+  
+    .navbar-menu li {
+      font-size: 16px; /* Smaller font size */
+    }
+  
+    /* Adjust hamburger icon size for smaller screens */
+    .navbar .hamburger svg {
+      width: 25px;
+      height: 25px;
+      margin-right: 14px;
+    }
+  }
+  

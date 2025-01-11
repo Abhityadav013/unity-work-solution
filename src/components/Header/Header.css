@@ -1,0 +1,69 @@
+/* Header.css */
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the video stays in the background */
+}
+
+.header-video video {
+  object-fit: cover; /* Ensure the video covers the area */
+  width: 100%;
+  height: 100%;
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: Outfit;
+  animation: fadeIn 3s;
+  z-index: 1; /* Ensure the text is above the video */
+  width: 100%; /* Ensures the container takes up full width */
+  gap: 20px; /* Add a gap between the elements inside the container */
+}
+
+.header-contents h1 {
+  font-weight: 500;
+  font-size: max(4.5vw, 32px);
+}
+
+.header-contents span {
+  font-size: 1.2vw;
+}
+
+.header-contents button {
+  background-color: transparent; /* Initial transparent background */
+  border: 2px solid white; /* Border that matches the text color */
+  color: white; /* White text color */
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 10%;
+  padding: 21px 20px;
+  transition: all 0.3s ease; /* Smooth transition for background and text */
+  align-self: center; /* This ensures the button is centered horizontally */
+}
+
+.header-contents button:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Black text color on hover */
+  border-color: black; /* Change border color to black on hover */
+}
